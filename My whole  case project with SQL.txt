@@ -1,0 +1,62 @@
+CASES 
+There was unexpected traffic controllers strike and I was asked to ,
+1 Pull  the list of impacted flights from the British Airways database ,due to flight cancellation 
+ SELECT
+  flight_id,
+  status,
+.  flight_number
+FROM
+  ba_flights
+WHERE
+  status = 'Cancelled';
+
+
+2.To add the flight number ,flight date and total passengers from the canceled flight 
+ --To add the flight number ,flight date and total passengers from the canceled flight
+SELECT
+  flight_number,
+  actual_flight_date,
+  total_passengers
+FROM
+  ba_flights
+WHERE
+  status = 'Cancelled';
+
+
+3.To know where the flight is leaving from ,where is it going ,and the total number of passengers 
+
+ SELECT
+  arrival_city,
+  departure_city,
+  total_passengers
+FROM
+  ba_flights
+WHERE
+  status = 'Cancelled';
+
+
+
+4.To pull only the canceled  flights 
+ 
+SELECT
+  flight_id
+FROM
+  ba_flights
+WHERE
+  status = 'Cancelled';
+
+
+5.Which flights are canceled by Heathrow Airport 
+
+SELECT
+  flight_number,
+  actual_flight_date,
+  arrival_city,
+  total_passengers,
+  departure_city
+FROM
+  ba_flights
+WHERE
+  status = 'Cancelled'
+  AND departure_city = 'London';
+

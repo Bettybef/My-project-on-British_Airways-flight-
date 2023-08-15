@@ -1,0 +1,9 @@
+ --To know where the flight is leaving from ,where is it going ,and the total number of passengers 
+SELECT
+  arrival_city,
+  departure_city,
+  total_passengers
+FROM
+  ba_flights
+WHERE
+  status = 'Cancelled'
